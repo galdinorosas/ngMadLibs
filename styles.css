@@ -60,6 +60,7 @@ input{
     margin: 2.25em 0.25em 0.25em 4.25em;
     width: 13em;
     height: 2em;
+    text-align: center;
 }
 
 .textContainer{
@@ -75,5 +76,10 @@ input{
 	width: 35em;
 	margin: 0;
 	padding-left: 2.5em;
+}
+
+p{
+	margin: 0;
+	padding: 0;
 }
 

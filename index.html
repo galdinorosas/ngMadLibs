@@ -6,9 +6,10 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js">
 	</script>
+	<script type="text/javascript" src="angular.js"></script>
 
 </head>
-<body ng-app="">
+<body ng-app="myApp" ng-controller="firstCtrl">
 
 	<nav>
 		<div class="smileyFaceContainer">
@@ -20,13 +21,13 @@
 			<h1>Automate This!</h1>	
 		</div>
 	</nav>
-	<div class="inputContainer"  ng-init="maleName='male name'; job_title='job title';tedious_task='tedious task'; dirty_task='dirty task'; celebrity='celebrity'; useless_skill='useless skill'; adjective='adjective'; obnoxiuous_celebrity = 'obnoxiuous celebrity'; huge_number='huge number'">
+	<div class="inputContainer" >
 		<h2>Provide the following words:</h2>
 
 		<table>
 			<tbody class="inputBody">
 				<tr>
-					<td><input ng-model="maleName" type="text" /></td>
+					<td><input ng-model="userName" type="text" /></td>
 					<td><input ng-model="job_title" type="text"/></td>
 					<td><input ng-model="tedious_task" type="text"/></td>
 				</tr>
@@ -40,18 +41,49 @@
 					<td><input ng-model="obnoxiuous_celebrity" type="text"/></td>
 					<td><input ng-model="huge_number" type="text"/></td>
 				</tr>
+				<tr>
+					<td><input ng-model="gender" type="text"/></td>
+
+				</tr>
 			</tbody>
 		</table>
 	</div>
 
-	<div class="textContainer">
+	<div class="textContainer" ng-switch="gender">
 		<p class="madLibText" >
-			<u>{{ maleName }}</u> was a <u>{{job_title}}</u> who loved technology. Although he loved parts of her job, he absolutely hated  <u>{{tedious_task}}</u> and <u>{{dirty_task}}</u>. So, <u>{{maleName}}</u> met with his life mentor <u>{{celebrity}}</u> who told him to learn how to <u>{{useless_skill}}</u> with Thinkful. Thinkful didn't offer a course on <u>{{useless_skill}}</u> so he studied programming instead.
+			<u>{{ userName }}</u> was a 
+			<u>{{job_title}}</u> who loved technology. Although 
+			<span ng-switch-when="female" ng-model="she">{{ she }}</span>
+			<span ng-switch-when="male" ng-model="he">{{ he }}</span>
+			<span ng-switch-default ng-model="heOrShe">{{ heOrShe }}</span> loved parts of 
+			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
+			<span ng-switch-when="male" ng-model="his">{{ his }}</span>
+			<span ng-switch-default ng-model="hisOrHer">{{ hisOrHer }}</span> job, 
+			<span ng-switch-when="female" ng-model="she">{{ she }}</span>
+			<span ng-switch-when="male" ng-model="he">{{ he }}</span>
+			<span ng-switch-default ng-model="heOrShe">{{ heOrShe }}</span> absolutely hated 
+			<u>{{tedious_task}}</u> and 
+			<u>{{dirty_task}}</u>. So, 
+			<u>{{userName}}</u> met with 
+			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
+			<span ng-switch-when="male" ng-model="his">{{ his }}</span>
+			<span ng-switch-default ng-model="hisOrHer">{{ hisOrHer }}</span> life mentor 
+			<u>{{celebrity}}</u> who told 
+			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
+			<span ng-switch-when="male" ng-model="him">{{ him }}</span>
+			<span ng-switch-default ng-model="himOrHer">{{ himOrHer }}</span>  to learn how to 
+			<u>{{useless_skill}}</u> with Thinkful. Thinkful didn't offer a course on 
+			<u>{{useless_skill}}</u> so 
+			<span ng-switch-when="female" ng-model="she">{{ she }}</span>
+			<span ng-switch-when="male" ng-model="he">{{ he }}</span>
+			<span ng-switch-default ng-model="heOrShe">{{ heOrShe }}</span> studied programming instead.
 		</p> 
 		<br/>
 		<br/>
 		<p class="madLibText"> 
-			What a great decision! With his new skills, <u>{{maleName}}</u> built a(n) <u>{{adjective}}</u> robot named <u>{{obnoxiuous_celebrity}}</u> that not only loved <u>{{dirty_task}}</u> but did it <u>{{huge_number}}</u> faster. 
+			What a great decision! With 
+			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
+			<span ng-switch-when="male" ng-model="his">{{ his }}</span> new skills, <u>{{userName}}</u> built a(n) <u>{{adjective}}</u> robot named <u>{{obnoxiuous_celebrity}}</u> that not only loved <u>{{dirty_task}}</u> but did it <u>{{huge_number}}</u> faster. 
 		</p>
 	</div>
 
