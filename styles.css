@@ -1,0 +1,79 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+nav{
+	width: 41em;
+	height: 7em;
+	margin: 0 auto;
+}
+
+.smileyFaceContainer{
+	height: 7em;
+	width: 8em;
+	float: left;
+	border: 0.25em black solid;
+}
+
+.smileyFaceImage{
+	height: 6em;
+	width: 6em;
+	padding-left: 1em;
+	padding-top: 0.5em;
+}
+
+.logoContainer{
+	height: 7em;
+	width: 32em;
+	float: left;
+	border: 0.25em black solid;
+
+}
+
+.logoImage{
+	height: 3em;
+    width: 11em;
+    margin-left: 30%;
+}
+
+h1{
+	margin: 0;
+	font-size: 2.75em;
+    padding-left: 20%;
+}
+
+.inputContainer{
+	width: 40.5em;
+	border: 0.25em solid black;
+	height: 20em;
+	margin: 0 auto;
+}
+
+h2{
+	margin: 0;
+    padding: 5% 0% 0% 5%;
+}
+
+input{
+    border: black 0.25em solid;
+    margin: 2.25em 0.25em 0.25em 4.25em;
+    width: 13em;
+    height: 2em;
+}
+
+.textContainer{
+	width: 40.5em;
+    border: 0.25em solid black;
+    height: 25em;
+    margin: 0 auto;
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+.madLibText{
+	width: 35em;
+	margin: 0;
+	padding-left: 2.5em;
+}
+
