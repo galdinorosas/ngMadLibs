@@ -55,12 +55,32 @@ h2{
     padding: 5% 0% 0% 5%;
 }
 
-input{
+input[type="text"]{
     border: black 0.25em solid;
     margin: 2.25em 0.25em 0.25em 4.25em;
     width: 13em;
     height: 2em;
     text-align: center;
+}
+
+.submitButton{
+	position: absolute;
+	border: black 0.25em solid;
+    margin: 19em 0.25em 0.25em 32.25em;
+    width: 13em;
+    height: 2em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.restartButton{
+	position: absolute;
+	border: black 0.25em solid;
+    margin: 10em 0.25em 0.25em 23.25em;
+    width: 13em;
+    height: 2em;
+    text-align: center;
+    cursor: pointer;
 }
 
 .textContainer{
@@ -81,5 +101,10 @@ input{
 p{
 	margin: 0;
 	padding: 0;
+}
+
+.error{
+	position: absolute;
+	margin-left: 3em;
 }
 
