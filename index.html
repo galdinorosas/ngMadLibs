@@ -4,27 +4,15 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js">
 	</script>
 
 	<script type="text/javascript" src="angular.js"></script>
 
 </head>
 <body ng-app="myApp" ng-controller="firstCtrl">
-	
-	<!-- <form name="myForm">
-    <input type="text" name="texty" ng-model="data.texty" required ng-minlength="2" ng-pattern="/^a/">
-</form>
-
-<span class="error" ng-if="myForm.texty.$error.required">
-    A name is required!
-</span>
-<span class="error" ng-if="myForm.texty.$error.pattern">
-    The name must start with the "a" character!
-</span>
-<button data-ng-click="test(myForm)">asdfasdf</button> -->
-
-
 
 	<nav>
 		<div class="smileyFaceContainer">
@@ -36,8 +24,9 @@
 			<h1>Automate This!</h1>	
 		</div>
 	</nav>
-	<form name="myForm" novalidate>
-		<div class="inputContainer" ng-show="textDisplay">
+
+	<form name="myForm"  novalidate>
+		<div class="inputContainer" ng-show="inputDisplay">
 			<h2>Provide the following words:</h2>
 
 			<table>
@@ -45,7 +34,7 @@
 					<tr>
 						<td>
 							<span class="error" ng-if="myForm.formName.$error.required">
-								A name is required!
+								Name is required!
 							</span>
 
 							<input name="formName" ng-model="userName" required type="text" />
@@ -54,7 +43,7 @@
 
 
 						<td>
-							<span class="error" ng-if="myForm.formJobTitle.$error.required">A job title is required!
+							<span class="error" ng-if="myForm.formJobTitle.$error.required">Job title is required!
 							</span>
 
 							<input name="formJobTitle" required ng-model="job_title" type="text"/>
@@ -62,7 +51,7 @@
 
 						<td>
 							<span class="error" ng-if="myForm.formTediousTask.$error.required">
-								A tedious task is required.
+								Tedious task is required!
 							</span>
 
 							<input name="formTediousTask" required ng-model="tedious_task" type="text"/>
@@ -71,41 +60,42 @@
 					<tr>
 						<td>
 						<span class="error" ng-if="myForm.formDirtyTask.$error.required">
-							A dirty task is required!
+							Dirty task is required!
 						</span>
 
 						<input name="formDirtyTask" required ng-model="dirty_task" type="text"/>
 						</td>
 						<td>
 							<span class="error" ng-if="myForm.formCelebrity.$error.required">
-								A celebrity is required!
+								Celebrity is required!
 							</span>
 
 							<input name="formCelebrity" required ng-model="celebrity" type="text"/>
 						</td>
 						<td>
 							<span class="error" ng-if="myForm.formUselessSkill.$error.required">
-								A useless skill is required!
+								Useless skill is required!
 							</span>
 
-							<input name="formUselessSkill" required ng-model="useless_skill" type="text"/></td>
+							<input name="formUselessSkill" required ng-model="useless_skill" type="text"/>
+						</td>
 					</tr>
 					<tr>
 						<td>
 							<span class="error" ng-if="myForm.formAdjective.$error.required">
-								A adjective is required!
+								Adjective is required!
 							</span>
 							<input name="formAdjective" required ng-model="adjective" type="text"/>
 						</td>
 						<td>
-							<span class="error" ng-if="myForm.formObnoxiuousCelebrity.$error.required">
-								A obnoxiuous celebrity is required!
+							<span class="error celebrity" ng-if="myForm.formObnoxiuousCelebrity.$error.required">
+								Obnoxiuous celebrity is required!
 							</span>
 							<input name="formObnoxiuousCelebrity" required ng-model="obnoxiuous_celebrity" type="text"/>
 						</td>
 						<td>
 							<span class="error" ng-if="myForm.formHugeNumber.$error.required">
-								A number is required!
+								Number is required!
 							</span>
 
 							<input name="formHugeNumber" required ng-model="huge_number" type="text"/>
@@ -114,7 +104,7 @@
 					<tr>
 						<td>
 							<span class="error" ng-if="myForm.formGender.$error.required">
-								A gender is required!
+								Enter Female or Male
 							</span>
 							<input name="formGender" required ng-model="gender" type="text"/>
 							<!-- <input name="formGender"  placeholder="Enter a number." ng-model="gender" type="button"/> -->
@@ -140,28 +130,28 @@
 			<u>{{job_title}}</u> who loved technology. Although 
 			<span ng-switch-when="female" ng-model="she">{{ she }}</span>
 			<span ng-switch-when="male" ng-model="he">{{ he }}</span>
-			<span ng-switch-default ng-model="heOrShe">{{ heOrShe }}</span> loved parts of 
+			loved parts of 
 			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
 			<span ng-switch-when="male" ng-model="his">{{ his }}</span>
-			<span ng-switch-default ng-model="hisOrHer">{{ hisOrHer }}</span> job, 
+			 job, 
 			<span ng-switch-when="female" ng-model="she">{{ she }}</span>
 			<span ng-switch-when="male" ng-model="he">{{ he }}</span>
-			<span ng-switch-default ng-model="heOrShe">{{ heOrShe }}</span> absolutely hated 
+			absolutely hated 
 			<u>{{tedious_task}}</u> and 
 			<u>{{dirty_task}}</u>. So, 
 			<u>{{userName}}</u> met with 
 			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
 			<span ng-switch-when="male" ng-model="his">{{ his }}</span>
-			<span ng-switch-default ng-model="hisOrHer">{{ hisOrHer }}</span> life mentor 
+			life mentor 
 			<u>{{celebrity}}</u> who told 
 			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
 			<span ng-switch-when="male" ng-model="him">{{ him }}</span>
-			<span ng-switch-default ng-model="himOrHer">{{ himOrHer }}</span>  to learn how to 
+			 to learn how to 
 			<u>{{useless_skill}}</u> with Thinkful. Thinkful didn't offer a course on 
 			<u>{{useless_skill}}</u> so 
 			<span ng-switch-when="female" ng-model="she">{{ she }}</span>
 			<span ng-switch-when="male" ng-model="he">{{ he }}</span>
-			<span ng-switch-default ng-model="heOrShe">{{ heOrShe }}</span> studied programming instead.
+			studied programming instead.
 		</p> 
 		<br/>
 		<br/>
@@ -170,7 +160,7 @@
 			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
 			<span ng-switch-when="male" ng-model="his">{{ his }}</span> new skills, <u>{{userName}}</u> built a(n) <u>{{adjective}}</u> robot named <u>{{obnoxiuous_celebrity}}</u> that not only loved <u>{{dirty_task}}</u> but did it <u>{{huge_number}}</u> faster. 
 		</p>
-
+		<input  value="GO BACK" class="goBackButton" ng-click="goBack()" type="button"/>
 		<input  value="RESTART" class="restartButton" ng-click="restart()" type="button"/>
 	</div>
 

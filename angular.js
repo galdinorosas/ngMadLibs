@@ -1,28 +1,25 @@
-angular.module('myApp',[])
-.controller('firstCtrl', function($scope){
-	$scope.madlibs = {
-		userName: 'name1',
+angular.module('myApp',['ngAnimate'])
+.controller('firstCtrl', function($scope,$timeout){
 
-	}
 
-	$scope.userName = 'name2';
-	$scope.job_title = 'job title';
-	$scope.tedious_task='tedious task';
-	$scope.dirty_task='dirty task';
-	$scope.celebrity='celebrity';
-	$scope.useless_skill='useless skill';
-	$scope.adjective='adjective';
-	$scope.obnoxiuous_celebrity = 'obnoxiuous celebrity';
-	$scope.huge_number='a large number';
-	$scope.gender="gender (male or female)"
+	$scope.userName = "";
+	$scope.job_title = "";
+	$scope.tedious_task="";
+	$scope.dirty_task="";
+	$scope.celebrity="";
+	$scope.useless_skill="";
+	$scope.adjective="";
+	$scope.obnoxiuous_celebrity = "";
+	$scope.huge_number="";
+	$scope.gender="";
 	$scope.he="he";
 	$scope.she="she";
 	$scope.him="him";
 	$scope.her="her";
 	$scope.his="his";
-	$scope.heOrShe = "he /or she";
-	$scope.hisOrHer = "his /or her";
-	$scope.himOrHer = "him /or her";
+
+
+	
 
 	$scope.test = function(f){
 		console.log(f);
@@ -31,11 +28,17 @@ angular.module('myApp',[])
 		}
 	}
 	$scope.textDisplay = true;
+	$scope.inputDisplay = true;
 
 	$scope.submit = function(){
 		if( $scope.myForm.$valid ) {
 		    console.log('The form is valid');
-		    $scope.textDisplay = false;
+		    $scope.inputDisplay = false;
+
+		    $timeout(function(){
+		    	$scope.textDisplay = false;
+		    }, 1000);
+		    
 		    console.log($scope.textDisplay);
 
 		} else {
@@ -45,28 +48,36 @@ angular.module('myApp',[])
 
 	$scope.restart = function(){
 		$scope.textDisplay = true;
-		$scope.userName = 'name2';
-		$scope.job_title = 'job title';
-		$scope.tedious_task='tedious task';
-		$scope.dirty_task='dirty task';
-		$scope.celebrity='celebrity';
-		$scope.useless_skill='useless skill';
-		$scope.adjective='adjective';
-		$scope.obnoxiuous_celebrity = 'obnoxiuous celebrity';
-		$scope.huge_number='a large number';
-		$scope.gender="gender (male or female)"
-		$scope.he="he";
-		$scope.she="she";
-		$scope.him="him";
-		$scope.her="her";
-		$scope.his="his";
-		$scope.heOrShe = "he /or she";
-		$scope.hisOrHer = "his /or her";
-		$scope.himOrHer = "him /or her";
+		$timeout(function() {
+			$scope.inputDisplay = true;
+			$scope.userName = "";
+			$scope.job_title = "";
+			$scope.tedious_task="";
+			$scope.dirty_task="";
+			$scope.celebrity="";
+			$scope.useless_skill="";
+			$scope.adjective="";
+			$scope.obnoxiuous_celebrity = "";
+			$scope.huge_number="";
+			$scope.gender="";
+			$scope.he="he";
+			$scope.she="she";
+			$scope.him="him";
+			$scope.her="her";
+			$scope.his="his";
+		}, 1000);
+		
+	};
+
+	$scope.goBack = function(){
+		$scope.textDisplay = true;
+		$timeout(function() {
+			
+			$scope.inputDisplay = true;
+		}, 1000);
 
 	};
 
-	
 
 
 });
