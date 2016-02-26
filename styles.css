@@ -1,63 +1,69 @@
-body{
-	margin: 0;
-	padding: 0;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-nav{
-	width: 41em;
-	height: 7em;
-	margin: 0 auto;
+
+/*** NAVIGATION BAR STYLES BEGINNING ***/
+
+nav {
+    width: 41em;
+    height: 7em;
+    margin: 0 auto;
 }
 
-.smileyFaceContainer{
-	height: 7em;
-	width: 8em;
-	float: left;
-	border: 0.25em black solid;
+.smileyFaceContainer {
+    height: 7em;
+    width: 8em;
+    float: left;
+    border: 0.25em black solid;
 }
 
-.smileyFaceImage{
-	height: 6em;
-	width: 6em;
-	padding-left: 1em;
-	padding-top: 0.5em;
+.smileyFaceImage {
+    height: 6em;
+    width: 6em;
+    padding-left: 1em;
+    padding-top: 0.5em;
 }
 
-.logoContainer{
-	height: 7em;
-	width: 32em;
-	float: left;
-	border: 0.25em black solid;
-
+.logoContainer {
+    height: 7em;
+    width: 32em;
+    float: left;
+    border: 0.25em black solid;
 }
 
-.logoImage{
-	height: 3em;
+.logoImage {
+    height: 3em;
     width: 11em;
     margin-left: 30%;
 }
 
-h1{
-	margin: 0;
-	font-size: 2.75em;
+h1 {
+    margin: 0;
+    font-size: 2.75em;
     padding-left: 20%;
 }
 
-.inputContainer{
-	width: 40.5em;
-	border: 0.25em solid black;
-	height: 20em;
-	margin: 0.25em auto;
+
+/*** NAVIGATION BAR STYLES END ***/
+
+
+/*** INPUT CONTAINER STLYLES BEGINNING ***/
+
+.inputContainer {
+    width: 40.5em;
+    border: 0.25em solid black;
+    height: 20em;
+    margin: 0.25em auto;
 }
 
-
-
-h2{
-	margin: 0;
+h2 {
+    margin: 0;
     padding: 5% 0% 0% 5%;
 }
 
-input[type="text"]{
+input[type="text"] {
     border: black 0.25em solid;
     margin: 2.25em 0.25em 0.25em 4.25em;
     width: 13em;
@@ -65,9 +71,9 @@ input[type="text"]{
     text-align: center;
 }
 
-.submitButton{
-	position: absolute;
-	border: black 0.25em solid;
+.submitButton {
+    position: absolute;
+    border: black 0.25em solid;
     margin: 19em 0.25em 0.25em 32.25em;
     width: 13em;
     height: 2em;
@@ -75,9 +81,15 @@ input[type="text"]{
     cursor: pointer;
 }
 
-.restartButton{
-	position: absolute;
-	border: black 0.25em solid;
+
+/*** INPUT CONTAINER STLYLES END ***/
+
+
+/*** TEXT CONTAINER STLYLES BEGINNING ***/
+
+.restartButton {
+    position: absolute;
+    border: black 0.25em solid;
     margin: 5em 0.25em 0.25em 36.25em;
     width: 13em;
     height: 2em;
@@ -85,9 +97,9 @@ input[type="text"]{
     cursor: pointer;
 }
 
-.goBackButton{
-	position: absolute;
-	border: black 0.25em solid;
+.goBackButton {
+    position: absolute;
+    border: black 0.25em solid;
     margin: 5em 0.25em 0.25em 10.25em;
     width: 13em;
     height: 2em;
@@ -95,8 +107,8 @@ input[type="text"]{
     cursor: pointer;
 }
 
-.textContainer{
-	width: 40.5em;
+.textContainer {
+    width: 40.5em;
     border: 0.25em solid black;
     height: 25em;
     margin: 0.25em auto;
@@ -104,64 +116,50 @@ input[type="text"]{
     line-height: 1.6em;
 }
 
-.madLibText{
-	width: 35em;
-	margin-top: 2em;
-	padding-left: 2.5em;
+.madLibText {
+    width: 35em;
+    margin-top: 2em;
+    padding-left: 2.5em;
 }
 
-p{
-	margin: 0;
-	padding: 0;
+p {
+    margin: 0;
+    padding: 0;
 }
 
-.error{
-	position: absolute;
-	margin-left: 3em;
+.error {
+    position: absolute;
+    margin-left: 3em;
 }
 
-td .celebrity{
-	margin-left: 0;
+td .celebrity {
+    margin-left: 0;
 }
 
-/*.inputContainer.ng-hide,
-.inputContainer.ng-hide-remove,
-.inputContainer.ng-hide-remove-active,
-.textContainer.ng-hide,
-.textContainer.ng-hide-add,
-.textContainer.ng-hide-add-active{
-  -webkit-transition: all linear 0.5s;
-}*/
+
+/*** TEXT CONTAINER STLYLES END ***/
+
+
+/*** FADE IN/OUT TRANSITION USING ANGULAR ANIMATE CLASSES. ***/
 
 .inputContainer.ng-hide-add,
 .inputContainer.ng-hide-remove,
 .textContainer.ng-hide-add,
 .textContainer.ng-hide-remove {
-  display: block !important;
-  transition: 1s linear all;
+    display: block !important;
+    transition: 1s linear all;
 }
 
 .inputContainer.ng-hide-add.ng-hide-add-active,
 .inputContainer.ng-hide-remove,
 .textContainer.ng-hide-remove,
-.textContainer.ng-hide-add.ng-hide-add-active{
-	opacity: 0;
-/*	-webkit-transition:all 1s linear;
-*/}
+.textContainer.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+}
 
 .textContainer.ng-hide-remove-active,
 .textContainer.ng-hide-add,
 .inputContainer.ng-hide-add,
-.inputContainer.ng-hide-remove-active{
-	opacity: 1;
+.inputContainer.ng-hide-remove-active {
+    opacity: 1;
 }
-
-
-/*.inputContainer.ng-hide-remove.ng-hide-add-active,.textContainer.ng-hide-add{
-	opacity: 0;
-}
-
-.inputContainer.ng-hide-remove-active, .textContainer.ng-hide-add.ng-hide-add-active{
-	opacity: 1;
-}*/
-

@@ -1,171 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js">
-	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js">
-	</script>
-
-	<script type="text/javascript" src="angular.js"></script>
-
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Angular and angular-animate CDN with link and script to css and js file. -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js">
+    </script>
+    <script type="text/javascript" src="angular.js"></script>
 </head>
+<!-- Initializing angular app and controller. -->
+
 <body ng-app="myApp" ng-controller="firstCtrl">
-
-	<nav>
-		<div class="smileyFaceContainer">
-			<img class="smileyFaceImage" src="images/ngMadLibsSmileyFace.jpg">
-		</div>
-
-		<div class="logoContainer">
-			<img class="logoImage" src="images/ngMadLibsLogo.jpg">
-			<h1>Automate This!</h1>	
-		</div>
-	</nav>
-
-	<form name="myForm"  novalidate>
-		<div class="inputContainer" ng-show="inputDisplay">
-			<h2>Provide the following words:</h2>
-
-			<table>
-				<tbody class="inputBody">
-					<tr>
-						<td>
-							<span class="error" ng-if="myForm.formName.$error.required">
-								Name is required!
-							</span>
-
-							<input name="formName" ng-model="userName" required type="text" />
-
-						</td>
-
-
-						<td>
-							<span class="error" ng-if="myForm.formJobTitle.$error.required">Job title is required!
-							</span>
-
-							<input name="formJobTitle" required ng-model="job_title" type="text"/>
-						</td>
-
-						<td>
-							<span class="error" ng-if="myForm.formTediousTask.$error.required">
-								Tedious task is required!
-							</span>
-
-							<input name="formTediousTask" required ng-model="tedious_task" type="text"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-						<span class="error" ng-if="myForm.formDirtyTask.$error.required">
-							Dirty task is required!
-						</span>
-
-						<input name="formDirtyTask" required ng-model="dirty_task" type="text"/>
-						</td>
-						<td>
-							<span class="error" ng-if="myForm.formCelebrity.$error.required">
-								Celebrity is required!
-							</span>
-
-							<input name="formCelebrity" required ng-model="celebrity" type="text"/>
-						</td>
-						<td>
-							<span class="error" ng-if="myForm.formUselessSkill.$error.required">
-								Useless skill is required!
-							</span>
-
-							<input name="formUselessSkill" required ng-model="useless_skill" type="text"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="error" ng-if="myForm.formAdjective.$error.required">
-								Adjective is required!
-							</span>
-							<input name="formAdjective" required ng-model="adjective" type="text"/>
-						</td>
-						<td>
-							<span class="error celebrity" ng-if="myForm.formObnoxiuousCelebrity.$error.required">
-								Obnoxiuous celebrity is required!
-							</span>
-							<input name="formObnoxiuousCelebrity" required ng-model="obnoxiuous_celebrity" type="text"/>
-						</td>
-						<td>
-							<span class="error" ng-if="myForm.formHugeNumber.$error.required">
-								Number is required!
-							</span>
-
-							<input name="formHugeNumber" required ng-model="huge_number" type="text"/>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="error" ng-if="myForm.formGender.$error.required">
-								Enter Female or Male
-							</span>
-							<input name="formGender" required ng-model="gender" type="text"/>
-							<!-- <input name="formGender"  placeholder="Enter a number." ng-model="gender" type="button"/> -->
-						</td>
-
-					</tr>
-					<input  value="SUBMIT" class="submitButton" ng-click="submit()" type="button"/>
-
-				</tbody>
-			</table>
-		</div>
-	</form>
-
-
-
-
-
-
-
-	<div class="textContainer" ng-switch="gender" ng-hide="textDisplay">
-		<p class="madLibText" >
-			<u>{{ userName }}</u> was a 
-			<u>{{job_title}}</u> who loved technology. Although 
-			<span ng-switch-when="female" ng-model="she">{{ she }}</span>
-			<span ng-switch-when="male" ng-model="he">{{ he }}</span>
-			loved parts of 
-			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
-			<span ng-switch-when="male" ng-model="his">{{ his }}</span>
-			 job, 
-			<span ng-switch-when="female" ng-model="she">{{ she }}</span>
-			<span ng-switch-when="male" ng-model="he">{{ he }}</span>
-			absolutely hated 
-			<u>{{tedious_task}}</u> and 
-			<u>{{dirty_task}}</u>. So, 
-			<u>{{userName}}</u> met with 
-			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
-			<span ng-switch-when="male" ng-model="his">{{ his }}</span>
-			life mentor 
-			<u>{{celebrity}}</u> who told 
-			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
-			<span ng-switch-when="male" ng-model="him">{{ him }}</span>
-			 to learn how to 
-			<u>{{useless_skill}}</u> with Thinkful. Thinkful didn't offer a course on 
-			<u>{{useless_skill}}</u> so 
-			<span ng-switch-when="female" ng-model="she">{{ she }}</span>
-			<span ng-switch-when="male" ng-model="he">{{ he }}</span>
-			studied programming instead.
-		</p> 
-		<br/>
-		<br/>
-		<p class="madLibText"> 
-			What a great decision! With 
-			<span ng-switch-when="female" ng-model="her">{{ her }}</span>
-			<span ng-switch-when="male" ng-model="his">{{ his }}</span> new skills, <u>{{userName}}</u> built a(n) <u>{{adjective}}</u> robot named <u>{{obnoxiuous_celebrity}}</u> that not only loved <u>{{dirty_task}}</u> but did it <u>{{huge_number}}</u> faster. 
-		</p>
-		<input  value="GO BACK" class="goBackButton" ng-click="goBack()" type="button"/>
-		<input  value="RESTART" class="restartButton" ng-click="restart()" type="button"/>
-	</div>
-
-	
-
-	
+    <!-- Nav bar which includes a smiley face, logo, and message. -->
+    <nav>
+        <div class="smileyFaceContainer">
+            <img class="smileyFaceImage" src="images/ngMadLibsSmileyFace.jpg">
+        </div>
+        <div class="logoContainer">
+            <img class="logoImage" src="images/ngMadLibsLogo.jpg">
+            <h1>Automate This!</h1>
+        </div>
+    </nav>
+    <!-- Form tag with novalidate angular attribute to stop the page from reloading on submit. -->
+    <form name="myForm" novalidate>
+        <!-- The user input container. This contains a ng-show attribute initially set to true. -->
+        <div class="inputContainer" ng-show="inputDisplay">
+            <h2>Provide the following words:</h2>
+            <table>
+                <tbody class="inputBody">
+                    <tr>
+                        <!-- table data elements below each include a span tag which is checking for the required attribute in the input tag. -->
+                        <td>
+                            <span class="error" ng-if="myForm.formName.$error.required">
+                                Name is required!
+                            </span>
+                            <input name="formName" ng-model="userName" required type="text" />
+                        </td>
+                        <td>
+                            <span class="error" ng-if="myForm.formJobTitle.$error.required">Job title is required!
+                            </span>
+                            <input name="formJobTitle" required ng-model="job_title" type="text" />
+                        </td>
+                        <td>
+                            <span class="error" ng-if="myForm.formTediousTask.$error.required">
+                                Tedious task is required!
+                            </span>
+                            <input name="formTediousTask" required ng-model="tedious_task" type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="error" ng-if="myForm.formDirtyTask.$error.required">
+                            Dirty task is required!
+                        </span>
+                            <input name="formDirtyTask" required ng-model="dirty_task" type="text" />
+                        </td>
+                        <td>
+                            <span class="error" ng-if="myForm.formCelebrity.$error.required">
+                                Celebrity is required!
+                            </span>
+                            <input name="formCelebrity" required ng-model="celebrity" type="text" />
+                        </td>
+                        <td>
+                            <span class="error" ng-if="myForm.formUselessSkill.$error.required">
+                                Useless skill is required!
+                            </span>
+                            <input name="formUselessSkill" required ng-model="useless_skill" type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="error" ng-if="myForm.formAdjective.$error.required">
+                                Adjective is required!
+                            </span>
+                            <input name="formAdjective" required ng-model="adjective" type="text" />
+                        </td>
+                        <td>
+                            <span class="error celebrity" ng-if="myForm.formObnoxiuousCelebrity.$error.required">
+                                Obnoxiuous celebrity is required!
+                            </span>
+                            <input name="formObnoxiuousCelebrity" required ng-model="obnoxiuous_celebrity" type="text" />
+                        </td>
+                        <td>
+                            <span class="error" ng-if="myForm.formHugeNumber.$error.required">
+                                Number is required!
+                            </span>
+                            <input name="formHugeNumber" required ng-model="huge_number" type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="error" ng-if="myForm.formGender.$error.required">
+                                Enter Female or Male
+                            </span>
+                            <input name="formGender" required ng-model="gender" type="text" />
+                            <!-- <input name="formGender"  placeholder="Enter a number." ng-model="gender" type="button"/> -->
+                        </td>
+                    </tr>
+                    <!-- Submit button with submit function performing on click. -->
+                    <input value="SUBMIT" class="submitButton" ng-click="submit()" type="button" />
+                </tbody>
+            </table>
+        </div>
+    </form>
+    <!-- This is the resulting textContainer which is displayed when the user clicks submit. Initially the textContainer is not shown due to ng-hide. ng-switch attribute is used to change visual text based on the users input.
+    -->
+    <div class="textContainer" ng-switch="gender" ng-hide="textDisplay">
+        <p class="madLibText">
+            <u>{{ userName }}</u> was a
+            <u>{{job_title}}</u> who loved technology. Although
+            <span ng-switch-when="female" ng-model="she">{{ she }}</span>
+            <span ng-switch-when="male" ng-model="he">{{ he }}</span> loved parts of
+            <span ng-switch-when="female" ng-model="her">{{ her }}</span>
+            <span ng-switch-when="male" ng-model="his">{{ his }}</span> job,
+            <span ng-switch-when="female" ng-model="she">{{ she }}</span>
+            <span ng-switch-when="male" ng-model="he">{{ he }}</span> absolutely hated
+            <u>{{tedious_task}}</u> and
+            <u>{{dirty_task}}</u>. So,
+            <u>{{userName}}</u> met with
+            <span ng-switch-when="female" ng-model="her">{{ her }}</span>
+            <span ng-switch-when="male" ng-model="his">{{ his }}</span> life mentor
+            <u>{{celebrity}}</u> who told
+            <span ng-switch-when="female" ng-model="her">{{ her }}</span>
+            <span ng-switch-when="male" ng-model="him">{{ him }}</span> to learn how to
+            <u>{{useless_skill}}</u> with Thinkful. Thinkful didn't offer a course on
+            <u>{{useless_skill}}</u> so
+            <span ng-switch-when="female" ng-model="she">{{ she }}</span>
+            <span ng-switch-when="male" ng-model="he">{{ he }}</span> studied programming instead.
+        </p>
+        <br/>
+        <br/>
+        <p class="madLibText">
+            What a great decision! With
+            <span ng-switch-when="female" ng-model="her">{{ her }}</span>
+            <span ng-switch-when="male" ng-model="his">{{ his }}</span> new skills, <u>{{userName}}</u> built a(n) <u>{{adjective}}</u> robot named <u>{{obnoxiuous_celebrity}}</u> that not only loved <u>{{dirty_task}}</u> but did it <u>{{huge_number}}</u> faster.
+        </p>
+        <!-- Reset and go-back button. -->
+        <input value="GO BACK" class="goBackButton" ng-click="goBack()" type="button" />
+        <input value="RESTART" class="restartButton" ng-click="restart()" type="button" />
+    </div>
 </body>
+
 </html>
