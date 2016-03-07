@@ -10,6 +10,7 @@ nav {
     width: 41em;
     height: 7em;
     margin: 0 auto;
+    margin-top: 4em;
 }
 
 .smileyFaceContainer {
@@ -63,12 +64,18 @@ h2 {
     padding: 5% 0% 0% 5%;
 }
 
-input[type="text"] {
+input[type="text"],input[type="number"] {
     border: black 0.25em solid;
     margin: 2.25em 0.25em 0.25em 4.25em;
     width: 13em;
     height: 2em;
     text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
 .submitButton {

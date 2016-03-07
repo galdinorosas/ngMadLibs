@@ -89,7 +89,7 @@
                             <span class="error" ng-if="myForm.formHugeNumber.$error.required">
                                 Number is required!
                             </span>
-                            <input name="formHugeNumber" required ng-model="huge_number" type="text" />
+                            <input name="formHugeNumber" required ng-model="huge_number" type="number" />
                         </td>
                     </tr>
                     <tr>
@@ -137,7 +137,7 @@
         <p class="madLibText">
             What a great decision! With
             <span ng-switch-when="female" ng-model="her">{{ her }}</span>
-            <span ng-switch-when="male" ng-model="his">{{ his }}</span> new skills, <u>{{userName}}</u> built a(n) <u>{{adjective}}</u> robot named <u>{{obnoxiuous_celebrity}}</u> that not only loved <u>{{dirty_task}}</u> but did it <u>{{huge_number}}</u> faster.
+            <span ng-switch-when="male" ng-model="his">{{ his }}</span> new skills, <u>{{userName}}</u> built a(n) <u>{{adjective}}</u> robot named <u>{{obnoxiuous_celebrity}}</u> that not only loved <u>{{dirty_task}}</u> but did it <u>{{huge_number}}</u> times faster.
         </p>
         <!-- Reset and go-back button. -->
         <input value="GO BACK" class="goBackButton" ng-click="goBack()" type="button" />
